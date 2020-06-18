@@ -18,6 +18,10 @@ export class AuthService {
       if (result) {
         this.menuCtrl.enable(true);
         // Logged in
+        this.toast.create({
+          message: `Willkommen ${result.user.displayName}`,
+          duration: 3000
+        }).then(toast => toast.present());
         if (redirectToURL) {
           this.router.navigateByUrl(redirectToURL);
         }
@@ -26,7 +30,8 @@ export class AuthService {
     catch (e) {
       this.toast.create({
         message: `Fehler beim Login!`,
-        duration: 3000
+        duration: 5000,
+        color: "danger",
       }).then(toast => toast.present());
       this.router.navigateByUrl('/login');
     }
@@ -46,7 +51,8 @@ export class AuthService {
 
         this.toast.create({
           message: `Benutzer ${result.user.email} erfolgreich registriert!`,
-          duration: 3000
+          duration: 3000,
+          color: "success"
         }).then(toast => toast.present());
 
       }
@@ -58,7 +64,8 @@ export class AuthService {
       console.log(e);
       this.toast.create({
         message: `Registrierung fehlgeschlagen!`,
-        duration: 3000
+        duration: 3000,
+        color: "danger"
       }).then(toast => toast.present());
     }
   }

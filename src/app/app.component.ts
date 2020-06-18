@@ -19,7 +19,7 @@ export class AppComponent {
     }, {
       title: 'Chat',
       url: 'chat',
-      icon: 'chat'
+      icon: 'chatbubbles-outline'
     },
   ];
 

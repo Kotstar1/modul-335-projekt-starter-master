@@ -3,11 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
 
-// TODO: Standardverhalten definieren
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToRoot = () => redirectLoggedInTo(['']);
 
-// TODO: routes mit Guard schützen
 const routes: Routes = [
   {
     path: '',

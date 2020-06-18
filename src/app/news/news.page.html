@@ -8,7 +8,14 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-      <!-- TODO: News-Elemente in einer Schlaufe anzeigen, siehe Ionic Doku für richtigen Style -->
-    </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of newsList |async">
+      <ion-avatar slot="start">
+        <img [src]="item.imgurl" alt="">
+      </ion-avatar>
+      <ion-label>{{item.titel}}</ion-label>
+
+
+    </ion-item>
+  </ion-list>
 </ion-content>

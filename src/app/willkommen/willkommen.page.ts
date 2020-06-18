@@ -19,6 +19,14 @@ export class WillkommenPage implements OnInit {
   }
 
   ngOnInit() {
+    this.storage.ready()
+      .then(() => {
+        this.storage.get('firstAppStart').then((val) => {
+          if (val == false) {
+            this.router.navigateByUrl('/login');
+          }
+        });
+      });
   }
 
   welcomeDone() {
