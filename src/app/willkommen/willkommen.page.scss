@@ -1,0 +1,20 @@
+ion-slide {
+    display: block;
+}
+ion-slides {
+    height: 100%;
+    h1 {
+        padding-top: 200px;
+        padding-bottom: 50px;
+    }
+}
+
+.first {
+    background-color: #CCCCCC; /* TODO: Farbe anpassen -> Danger */
+}
+.second {
+    background-color: #CCCCCC; /* TODO: Farbe anpassen -> Warning */
+}
+.third {
+    background-color: #CCCCCC; /* TODO: Farbe anpassen -> Success */
+}

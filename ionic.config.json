@@ -1,0 +1,7 @@
+{
+  "name": "modul-335-projekt-starter",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
