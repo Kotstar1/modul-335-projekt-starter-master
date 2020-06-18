@@ -19,10 +19,14 @@ export class NewsPage implements OnInit {
   constructor(private router: Router, private newsMsgService: NewsDetailService, afDb: AngularFireDatabase) { 
     this.newsListRef = afDb.list('/news/');
     this.newsList = this.newsListRef.valueChanges();
-    console.log(this.newsList)
   }
 
   ngOnInit() {
+  }
+
+  newsMsg(e: any) {
+    this.newsMsgService.setNewsMessageDetail(e)
+    this.router.navigateByUrl("news-detail")
   }
   
   

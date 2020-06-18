@@ -1,8 +1,18 @@
 <ion-header>
   <ion-toolbar>
+    <ion-back-button></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-no-padding">
-    <!-- TODO: Card + Fab -->
+  <ion-card *ngFor="let item of array">
+    <img [src]="item.imgurl" />
+    <ion-card-header>
+      <ion-card-subtitle>{{item.titel}}</ion-card-subtitle>
+      <ion-card-title>{{item.slug}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.description}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

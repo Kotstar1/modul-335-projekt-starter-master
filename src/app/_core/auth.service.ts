@@ -61,7 +61,6 @@ export class AuthService {
       }
     }
     catch (e) {
-      console.log(e);
       this.toast.create({
         message: `Registrierung fehlgeschlagen!`,
         duration: 3000,
@@ -77,7 +76,6 @@ export class AuthService {
   logout() {
     this.menuCtrl.enable(false);
     this.afAuth.signOut().then(() => {
-      console.log("User succesfully logged out!");
       this.router.navigateByUrl('/login');
     });
   }

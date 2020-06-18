@@ -10,9 +10,11 @@ import { NewsMessage } from "../_types/news";
 export class NewsDetailPage implements OnInit {
 
   newsdetail: NewsMessage;
+  array: any = [];
 
   constructor(private newsMsgService: NewsDetailService) { 
-    // TODO: Getter von NewsDetailService verwenden um NewsMessage-Objekt zu laden
+    this.newsdetail = newsMsgService.getNewsMessageDetail();
+    this.array = [this.newsdetail]
   }
 
   ngOnInit() {
