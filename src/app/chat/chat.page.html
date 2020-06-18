@@ -8,5 +8,33 @@
 </ion-header>
 
 <ion-content class="ion-no-padding">
-
+  <div #scrollMe class="chat-nachrichten" (swipe)="swipeEvent($event)">
+    <ion-list>
+      <div class="messages" *ngFor="let chat of chatList | async" [class.other]="chat.username === this.currentUser">
+        <div class="message">
+          <span>
+            <h3 *ngIf="chat.username" [style.color]="stringToColour(chat.username)">{{chat.username}} </h3>
+            <p *ngIf="chat.text">{{chat.text}}</p>
+          </span>
+          <div class="time" *ngIf="showDates">{{chat.date}}</div>
+        </div>
+      </div>
+    </ion-list>
+  </div>
+  <form class="chat-eingabe">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+          <ion-input autofocus="true" type="text" name="message" [(ngModel)]="message" (keyup.enter)="sendMessage()">
+          </ion-input>
+        </ion-col>
+        <ion-col size="2" class="ion-text-right">
+          <ion-button color="danger" (click)="sendMessage()">
+            <ion-icon *ngIf="!showSpinnerIcon" name="send"></ion-icon>
+            <ion-spinner *ngIf="showSpinnerIcon" name="bubbles"></ion-spinner>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
